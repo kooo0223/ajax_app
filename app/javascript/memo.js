@@ -1,15 +1,15 @@
 const buildHTML = (XHR) => {
   const item = XHR.response.post;
   const html = `
-    <div class="post>
+    <div class="post">
       <div class="post-date">
-        投稿日時:${item.created_at}
+        投稿日時：${item.created_at}
       </div>
       <div class="post-content">
         ${item.content}
       </div>
     </div>`;
-    return html;
+  return html;
 };
 
 function post (){
@@ -23,7 +23,7 @@ function post (){
     XHR.responseType = "json";
     XHR.send(formData);
     XHR.onload = () => {
-      if (XHR.status != 200){
+      if (XHR.status != 200) {
         alert(`Error ${XHR.status}: ${XHR.statusText}`);
         return null;
       };
@@ -35,4 +35,4 @@ function post (){
   });
 };
 
-window.addEventListener('load', post
+window.addEventListener('load', post);
